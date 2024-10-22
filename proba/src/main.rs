@@ -80,9 +80,9 @@ fn main() {
     match proba_result(probability) {
         Ok(win) => {
             if win {
-                println!("Probabilité réalisée");
+                println!("Probability realized");
             } else {
-                println!("Probabilité non réalisée");
+                println!("Probability not realized");
             }
         }
         Err(error) => {
