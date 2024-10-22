@@ -3,7 +3,7 @@ use rand::Rng;
 /// Tests a probability by returning a bool
 fn proba_bool(proba: f32) -> bool {
     if proba > 0.0 && proba < 100.0 {
-        let proba_coef: f32 = proba as f32 / 100.0;
+        let proba_coef: f32 = proba / 100.0;
         let rng_num: f32 = rand::thread_rng().gen();
         if rng_num < proba_coef {
             true
@@ -20,7 +20,7 @@ fn proba_bool(proba: f32) -> bool {
 /// possibility of an invalid numeric input
 fn proba_result(proba:f32) -> Result<bool, String>{
     if proba > 0.0 && proba < 100.0 {
-        let proba_coef: f32 = proba as f32 / 100.0;
+        let proba_coef: f32 = proba / 100.0;
         let rng_num: f32 = rand::thread_rng().gen();
 
         if rng_num < proba_coef {
@@ -44,7 +44,7 @@ fn proba_attemps(proba:f32) {
     if proba <= 0.0 || proba > 100.0 {
         println!("Incorrect proba value (>0, <100)");
     } else {
-        let proba_coef: f32 = proba as f32 / 100.0;
+        let proba_coef: f32 = proba / 100.0;
         let mut i: i32 = 0; // Attempts counter
         
         loop {
@@ -71,9 +71,9 @@ fn main() {
 
     // Using 'proba_bool'
     if proba_bool(probability) {
-        println!("OK");
+        println!("Probability realized");
     } else {
-        println!("NOPE");
+        println!("Probability not realized");
     }
 
     // Using 'proba_result'
