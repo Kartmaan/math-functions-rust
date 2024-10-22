@@ -12,13 +12,13 @@ fn attemps(proba:u8) {
 
             if rng_num <= proba_coef {
                 i += 1;
-                println!("WIN !");
+                println!("WIN!");
                 println!("Probability : {}% | Won in {} attemps", proba, i);
                 println!("Target value : {} | Value obtained {}", proba_coef, rng_num);
                 break;
 
             } else {
-                println!("Nope ({})", i+1);
+                print!("x.");
                 i += 1;
             }
         } // loop
