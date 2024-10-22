@@ -4,4 +4,4 @@ Rust function to determine whether a number is prime and thus generate primes on
 ## Screenshot
 The 5000th first prime numbers :
 
-![prime](https://github.com/user-attachments/assets/a70cb6e7-d70b-46bb-97bd-fa639db41e8a)
+![prime](https://github.com/user-attachments/assets/4b66d9c2-f354-4354-9b8f-04bb059de8dd)
