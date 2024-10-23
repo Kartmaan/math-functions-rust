@@ -16,8 +16,22 @@ fn proba_bool(proba: f32) -> bool {
     }
 }
 
-/// Tests a probability by returning a Result to predict the 
-/// possibility of an invalid numeric input
+/// Tests a probability by returning an Option<bool>
+fn proba_some(proba: f32) -> Option<bool> {
+    if proba > 0.0 && proba < 100.0 {
+        let proba_coef: f32 = proba / 100.0;
+        let rng_num: f32 = rand::thread_rng().gen();
+        if rng_num < proba_coef {
+            Some(true)
+        } else {
+            Some(false)
+        }
+    } else {
+        None
+    }
+}
+
+/// Tests a probability by returning a Result<bool, String>
 fn proba_result(proba:f32) -> Result<bool, String>{
     if proba > 0.0 && proba < 100.0 {
         let proba_coef: f32 = proba / 100.0;
@@ -69,11 +83,23 @@ fn main() {
     // Probability value (1..100)
     let probability: f32 = 3.33;
 
-    // Using 'proba_bool'
+    // Using 'proba_bool' with 'if..else' statement
     if proba_bool(probability) {
         println!("Probability realized");
     } else {
         println!("Probability not realized");
+    }
+
+    // Using 'proba_some' with 'if let' synthax
+    let lets_try: Option<bool> = proba_some(probability);
+    if let Some(res) = lets_try {
+        if res { // true
+            println!("Probability realized");
+        } else { // false
+            println!("Probability not realized");
+        }
+    } else { // None (Error)
+        println!("Incorrect value");
     }
 
     // Using 'proba_result'
