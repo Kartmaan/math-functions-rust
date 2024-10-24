@@ -1,0 +1,1 @@
+C:\Users\diego\Documents\Programmation\Rust\Projets\math-functions\combinations\target\debug\combinations.exe: C:\Users\diego\Documents\Programmation\Rust\Projets\math-functions\combinations\src\main.rs
